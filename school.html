@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Онлайн-школа Каитхэ Лаоши — кабинет</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FFF7EA">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="app.css?v=1">
+</head>
+<body class="app">
+
+<div class="demo-bar">Демо-версия онлайн-школы · все ученики и оценки примерные · <a href="index.html">← на сайт</a></div>
+
+<!-- вход -->
+<section class="login" id="login">
+  <div class="login__card">
+    <a class="logo" href="index.html"><span class="seal">中</span><span class="logo__t">Каитхэ<b>Лаоши</b></span></a>
+    <h1 class="h2">Вход в онлайн-школу</h1>
+    <p class="muted">Выберите, кем войти в демо:</p>
+    <div class="login__roles">
+      <button class="role" type="button" data-role="student"><span class="role__e">🐼</span><b>Я ученик</b><small>Маша, 10 лет · HSK 1</small></button>
+      <button class="role role--t" type="button" data-role="teacher"><span class="role__e">👩‍🏫</span><b>Я преподаватель</b><small>Каитхэ Лаоши</small></button>
+    </div>
+  </div>
+</section>
+
+<!-- приложение -->
+<div class="shell" id="shell" hidden>
+  <aside class="side">
+    <a class="logo" href="index.html"><span class="seal">中</span><span class="logo__t">Каитхэ<b>Лаоши</b></span></a>
+    <div class="side__me" id="side-me"></div>
+    <nav class="side__nav" id="side-nav"></nav>
+    <button class="side__out" type="button" id="logout">Сменить роль</button>
+  </aside>
+  <main class="main" id="main"></main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js?v=2"></script>
+<script src="school.js?v=1"></script>
+<script src="sig.js?v=2" defer></script>
+</body>
+</html>

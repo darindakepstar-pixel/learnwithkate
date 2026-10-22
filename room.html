@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Урок · Каитхэ Лаоши</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FFF7EA">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="app.css?v=1">
+</head>
+<body class="app room-page">
+
+<header class="rbar">
+  <a class="logo" href="school.html"><span class="seal">中</span><span class="logo__t">Каитхэ<b>Лаоши</b></span></a>
+  <div class="rbar__t"><b id="r-title"></b><small><span class="live"></span> идёт урок · <span id="r-timer">00:00</span></small></div>
+  <span class="tag" id="r-role"></span>
+  <a class="btn btn--line btn--sm" href="school.html">Выйти</a>
+</header>
+
+<main class="room">
+  <section class="pane video">
+    <div class="pane__h"><b>Видеосвязь</b><a class="pane__link" id="v-open" target="_blank" rel="noopener">в новой вкладке ↗</a></div>
+    <div class="video__box" id="v-box">
+      <div class="video__ph" id="v-ph">
+        <span class="video__e">📹</span>
+        <p>Видео, звук и показ экрана — прямо в браузере, без установки программ.</p>
+        <button class="btn btn--red" type="button" id="v-start">Включить видео</button>
+        <small>Сервис Jitsi Meet, бесплатно</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="pane boardp">
+    <div class="tools" role="toolbar" aria-label="Инструменты доски">
+      <div class="tools__g" id="t-colors">
+        <button type="button" class="sw is-on" data-c="#23192B" style="--c:#23192B" aria-label="Чёрный"></button>
+        <button type="button" class="sw" data-c="#F0483E" style="--c:#F0483E" aria-label="Красный"></button>
+        <button type="button" class="sw" data-c="#17B394" style="--c:#17B394" aria-label="Зелёный"></button>
+        <button type="button" class="sw" data-c="#3D8FE0" style="--c:#3D8FE0" aria-label="Синий"></button>
+        <button type="button" class="sw" data-c="#F39A1D" style="--c:#F39A1D" aria-label="Оранжевый"></button>
+      </div>
+      <div class="tools__g">
+        <button type="button" class="tb is-on" data-size="4" title="Тонкая">✎</button>
+        <button type="button" class="tb" data-size="9" title="Кисть"><b>✎</b></button>
+        <button type="button" class="tb" id="t-eraser" title="Ластик">⌫</button>
+      </div>
+      <div class="tools__g">
+        <button type="button" class="tb" id="t-grid" title="Сетка для иероглифов">米</button>
+        <button type="button" class="tb" id="t-undo" title="Отменить">↶</button>
+        <button type="button" class="tb" id="t-clear" title="Очистить">🗑</button>
+        <button type="button" class="tb" id="t-save" title="Сохранить картинку">⤓</button>
+      </div>
+    </div>
+    <div class="board" id="board">
+      <canvas id="b-bg" aria-hidden="true"></canvas>
+      <canvas id="b-ink" aria-label="Доска для рисования"></canvas>
+      <div class="board__hint" id="b-hint">Рисуйте пальцем, стилусом или мышкой. Нажмите на слайд справа — он появится на доске для обводки.</div>
+    </div>
+  </section>
+
+  <section class="pane slidesp">
+    <div class="pane__h"><b>Материалы урока</b><small id="s-count"></small></div>
+    <div class="slides-list" id="s-list"></div>
+    <div class="pane__h pane__h--sub"><b>Карточка на экране</b></div>
+    <button class="flash flash--room" type="button" id="s-card" aria-label="Перевернуть карточку">
+      <span class="flash__in"><span class="flash__f"><b class="hz" id="sc-h"></b></span><span class="flash__b"><span class="py" id="sc-p"></span><b id="sc-r"></b></span></span>
+    </button>
+    <div class="slides-nav"><button class="btn btn--line btn--sm" type="button" id="s-prev">←</button><button class="btn btn--sun btn--sm" type="button" id="s-say">🔊</button><button class="btn btn--line btn--sm" type="button" id="s-next">→</button></div>
+  </section>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js?v=2"></script>
+<script src="room.js?v=1"></script>
+</body>
+</html>
