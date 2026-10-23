@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Платформа для обучения Каитхэ Лаоши — скоро</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FFF7EA">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="Unbounded.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css?v=3">
+<style>
+.soon { min-height: 100vh; display: flex; flex-direction: column; }
+.soon__top { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; }
+.soon__in { flex: 1; display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; padding: 30px 0 70px; }
+.soon__h { font-family: var(--display); font-weight: 800; font-size: clamp(36px, 5.4vw, 68px); line-height: 1.02; letter-spacing: -.035em; }
+.soon__lead { margin-top: 20px; font-size: 18px; color: var(--muted); max-width: 540px; }
+.soon__wait { display: inline-flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin-top: 26px; padding: 12px 18px; border: 2px solid var(--ink); border-radius: 18px; background: #fff; box-shadow: var(--sh); rotate: -1.5deg; }
+.soon__wait .hz { font-size: 30px; color: var(--red); }
+.soon__wait small { color: var(--muted); font-weight: 600; }
+.steps { display: grid; gap: 10px; margin-top: 30px; max-width: 520px; }
+.steps li { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+.steps i { flex: none; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; border: 2px solid var(--ink); font-style: normal; font-size: 13px; background: #fff; }
+.steps .is-done i { background: var(--jade); color: #fff; }
+.steps .is-now i { background: var(--sun); animation: spin 2.4s linear infinite; }
+.steps .is-now i::before { content: "◐"; }
+.steps em { margin-left: auto; font-style: normal; font-size: 13px; color: var(--muted); }
+.soon__cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+.site { position: relative; display: grid; justify-items: center; gap: 18px; padding: 40px 0; }
+.site__grid { position: relative; width: min(340px, 78vw); aspect-ratio: 1; border: 2px solid var(--ink); border-radius: 30px; background: #fff; box-shadow: var(--sh-lg); overflow: hidden;
+  background-image: linear-gradient(var(--red) 0 0), linear-gradient(var(--red) 0 0), repeating-linear-gradient(45deg, transparent 0 18px, #FFEFD6 18px 36px);
+  background-size: 100% 1px, 1px 100%, auto; background-position: center, center, 0 0; background-repeat: no-repeat, no-repeat, repeat; }
+.site__grid::before, .site__grid::after { content: ""; position: absolute; inset: 0; border-top: 1px dashed rgba(240,72,62,.45); width: 142%; transform-origin: 0 0; rotate: 45deg; }
+.site__grid::after { left: auto; right: 0; transform-origin: 100% 0; rotate: -45deg; }
+.site__hz { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--hz); font-size: min(230px, 54vw); line-height: 1; color: var(--ink); z-index: 1;
+  -webkit-mask: linear-gradient(to top, #000 var(--fill, 0%), rgba(0,0,0,.12) var(--fill, 0%)); mask: linear-gradient(to top, #000 var(--fill, 0%), rgba(0,0,0,.12) var(--fill, 0%)); animation: fill 5s var(--ease) infinite; }
+.site__tape { position: absolute; left: -12%; right: -12%; bottom: 14%; z-index: 2; padding: 8px 0; rotate: -8deg; border-block: 2px solid var(--ink); font-weight: 800; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; overflow: hidden;
+  background: repeating-linear-gradient(-45deg, var(--sun) 0 22px, #FFE08A 22px 44px); }
+.site__tape span { display: inline-block; animation: tape 14s linear infinite; }
+.site__cap { font-weight: 700; color: var(--muted); font-size: 14px; }
+.site .float--1 { right: 4%; top: 6%; } .site .float--2 { left: 2%; top: 300px; bottom: auto; }
+.word { width: min(340px, 78vw); display: grid; gap: 12px; justify-items: center; margin-top: 8px; }
+.word__t { font-weight: 800; font-size: 14px; }
+.word .flash { width: 100%; height: 150px; }
+.word .flash__f .hz { font-size: 64px; line-height: 1; color: var(--red); }
+.word__bar { display: flex; gap: 10px; }
+@property --fill { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+@keyframes fill { 0% { --fill: 0%; } 70%, 100% { --fill: 100%; } }
+@keyframes tape { to { transform: translateX(-50%); } }
+@keyframes spin { to { rotate: 360deg; } }
+@media (max-width: 900px) { .soon__in { grid-template-columns: 1fr; gap: 20px; padding-top: 10px; } }
+@media (prefers-reduced-motion: reduce) { .site__hz, .site__tape span, .steps .is-now i { animation: none; } .site__hz { --fill: 100%; } }
+</style>
+</head>
+<body>
+
+<div class="soon wrap">
+  <header class="soon__top">
+    <a class="logo" href="index.html" aria-label="Каитхэ Лаоши — на сайт"><span class="seal">中</span><span class="logo__t">Каитхэ<b>Лаоши</b></span></a>
+    <a class="btn btn--line btn--sm" href="index.html">← На сайт</a>
+  </header>
+
+  <main class="soon__in">
+    <div>
+      <p class="kicker"><span class="hz">平台</span> платформа для обучения</p>
+      <h1 class="soon__h">Здесь <span class="mark">строится</span> место для уроков</h1>
+      <p class="soon__lead">Скоро здесь будет всё в одном окне: видеоурок с доской для иероглифов, домашка с проверкой, карточки и ваш прогресс. А пока уроки идут как обычно — запишитесь, и Катя пришлёт ссылку.</p>
+      <p class="soon__wait"><span class="hz">敬请期待</span><b>jìng qǐng qī dài</b><small>— «ждите с нетерпением»</small></p>
+      <ul class="steps">
+        <li class="is-done"><i>✓</i>Сайт, мини-уроки и карточки<em>готово</em></li>
+        <li class="is-now"><i></i>Комната урока: видео и доска<em>в работе</em></li>
+        <li><i>3</i>Кабинет ученика и домашка<em>скоро</em></li>
+        <li><i>4</i>Баллы, серии и прогресс<em>скоро</em></li>
+      </ul>
+      <div class="soon__cta">
+        <a class="btn btn--red" href="index.html#signup">Записаться на урок</a>
+        <a class="btn btn--line" id="tg-link" href="https://t.me/litona1357" target="_blank" rel="noopener">Узнать о запуске в Telegram ↗</a>
+      </div>
+    </div>
+
+    <div class="site">
+      <div class="site__grid" aria-hidden="true">
+        <span class="site__hz">学</span>
+        <div class="site__tape"><span>в разработке · 建设中 · в разработке · 建设中 · в разработке · 建设中 · в разработке · 建设中 · в разработке · 建设中 · в разработке · 建设中 ·&nbsp;</span></div>
+      </div>
+      <p class="site__cap"><span class="hz">学</span> xué — «учиться». Дописываем по черте</p>
+      <span class="float float--1 hz" aria-hidden="true">加油</span>
+      <span class="float float--2 hz" aria-hidden="true">等</span>
+
+      <div class="word">
+        <p class="word__t">Пока ждёте — выучите слово</p>
+        <button class="flash" type="button" id="w-card" aria-label="Перевернуть карточку">
+          <span class="flash__in">
+            <span class="flash__f"><b class="hz" id="w-h"></b><small>нажмите, чтобы перевернуть</small></span>
+            <span class="flash__b"><span class="py" id="w-p"></span><b id="w-r"></b></span>
+          </span>
+        </button>
+        <div class="word__bar">
+          <button class="btn btn--line btn--sm" type="button" id="w-say">🔊 Послушать</button>
+          <button class="btn btn--jade btn--sm" type="button" id="w-next">Ещё слово →</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="data.js?v=2"></script>
+<script>
+(function () {
+  var $ = function (s) { return document.querySelector(s); };
+  $('#tg-link').href = 'https://t.me/' + CONFIG.telegram;
+  var card = $('#w-card'), w, last = -1;
+  function next() {
+    var i; do { i = Math.floor(Math.random() * WORDS.length); } while (i === last && WORDS.length > 1);
+    last = i; w = WORDS[i]; card.classList.remove('is-flipped');
+    setTimeout(function () { $('#w-h').textContent = w.h; $('#w-p').innerHTML = pinyinHtml(w.p); $('#w-r').textContent = w.r; }, 200);
+  }
+  card.addEventListener('click', function () { card.classList.toggle('is-flipped'); if (card.classList.contains('is-flipped')) speak(w.h); });
+  $('#w-say').addEventListener('click', function () { speak(w.h); });
+  $('#w-next').addEventListener('click', next);
+  next();
+})();
+</script>
+</body>
+</html>
