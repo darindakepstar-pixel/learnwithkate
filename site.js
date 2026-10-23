@@ -90,6 +90,12 @@
       document.querySelectorAll('[data-group="format"] .chip-b').forEach(function (c) { c.setAttribute('aria-pressed', c.textContent === a.dataset.pick ? 'true' : 'false'); });
     });
   });
+  // course card → preselect who
+  document.querySelectorAll('[data-who]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      document.querySelectorAll('[data-group="who"] .chip-b').forEach(function (c) { c.setAttribute('aria-pressed', c.textContent === a.dataset.who ? 'true' : 'false'); });
+    });
+  });
 
   // form → telegram
   var form = $('#signup-form'), tg = 'https://t.me/' + CONFIG.telegram;
