@@ -152,6 +152,18 @@ button { font: inherit; color: inherit; }
 .plan__rows dd { margin: 0; font-weight: 800; text-align: right; white-space: nowrap; }
 .plan__rows dd small { font-size: 12px; font-weight: 600; color: var(--muted); }
 .plans__note { margin-top: 18px; font-size: 14px; }
+.plan__price s, .plan__rows dd s, .who__meta s { color: var(--muted); font-weight: 600; text-decoration-thickness: 2px; }
+.plan__price s { display: block; font-size: 18px; font-family: 'Onest', sans-serif; }
+.plan__rows dd s { display: block; font-size: 13px; }
+.who__meta s { font-size: 13px; }
+.promo { display: flex; align-items: center; gap: 18px; margin-bottom: 26px; padding: 18px 24px; border: 2px solid var(--ink); border-radius: 22px; background: var(--red); color: #fff; box-shadow: var(--sh); }
+.promo__s { flex: none; width: 58px; height: 58px; display: grid; place-items: center; border: 2px solid var(--ink); border-radius: 14px; background: #fff; font-size: 30px; rotate: -6deg; }
+.promo b { display: block; font-family: var(--display); font-size: 20px; }
+.promo span:not(.promo__s) { font-size: 15px; color: #FFE3DF; }
+.rules { margin-top: 26px; padding: 22px 26px; border: 2px dashed var(--ink); border-radius: 22px; background: #fff; }
+.rules h3 { font-family: var(--display); font-size: 18px; font-weight: 800; margin-bottom: 10px; }
+.rules ul { display: grid; gap: 8px; font-size: 15px; color: var(--muted); }
+.rules b { color: var(--ink); }
 .deals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px; }
 .deal { display: flex; gap: 14px; align-items: center; padding: 16px 18px; border-radius: 20px; border: 2px dashed var(--ink); background: var(--paper-2); }
 .deal b { display: block; } .deal span:not(.deal__s) { font-size: 14px; color: var(--muted); }
